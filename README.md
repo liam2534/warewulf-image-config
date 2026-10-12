@@ -1,0 +1,1 @@
+# warewulf-image-config
