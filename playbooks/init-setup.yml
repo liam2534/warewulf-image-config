@@ -1,15 +1,15 @@
 ---
-- name: Update Server
-  hosts: ww_nodes
-  vars_files:
-    - ../vault.yml
-  tags: 
-    - ww-node-prep
-  tasks:
-    - name: Update node
-      ansible.builtin.import_role:
-        name: init-setup
-        tasks_from: init-packages.yml
+# - name: Update Server
+#   hosts: ww_nodes
+#   vars_files:
+#     - ../vault.yml
+#   tags: 
+#     - ww-node-prep
+#   tasks:
+#     - name: Update node
+#       ansible.builtin.import_role:
+#         name: init-setup
+#         tasks_from: init-packages.yml
 
 - name: make user liam
   hosts: ww_nodes
