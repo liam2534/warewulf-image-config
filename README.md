@@ -1,1 +1,2 @@
 # warewulf-image-config
+Test
