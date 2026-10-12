@@ -1,0 +1,13 @@
+---
+# setup user liam, give him a pw, and put him in sudoers (wheel)
+- name: Make User liam
+  ansible.builtin.user:
+    name: liam
+    shell: /bin/bash
+    create_home: yes
+    groups: wheel
+    state: present
+    password: "{{liam_password | string | password_hash('sha512')}}"
+  become: yes
+
+#import SSH keys in ~/.ssh/authorized_keys
