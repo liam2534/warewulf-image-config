@@ -1,6 +1,8 @@
 ---
 - name: Update Server
   hosts: ww_nodes
+  vars_files:
+    - ../vault.yml
   tags: 
     - ww-node-prep
   tasks:
@@ -11,6 +13,8 @@
 
 - name: make user liam
   hosts: ww_nodes
+  vars_files:
+    - ../vault.yml
   tags:
     - ww-node-prep
   tasks:

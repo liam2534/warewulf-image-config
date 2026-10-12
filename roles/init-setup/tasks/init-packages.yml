@@ -2,7 +2,7 @@
 - name: Install prerequisites
   ansible.builtin.dnf:
     name:
-      - "*"
+      - curl
     state: latest
     update_cache: yes
     become: true
