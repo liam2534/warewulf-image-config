@@ -4,5 +4,5 @@ all:
       hosts:
         n1:
           ansible_connection: community.general.chroot
-          ansible_host: /var/lib/warewulf/chroots/rockylinux-9/rootfs
+          ansible_host: /var/lib/warewulf/chroots/rocky9-current/rootfs
           

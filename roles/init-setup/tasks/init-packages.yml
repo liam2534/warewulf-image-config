@@ -1,0 +1,15 @@
+---
+- name: Install prerequisites
+  ansible.builtin.dnf:
+    name:
+      - "*"
+    state: latest
+    update_cache: yes
+    become: true
+
+- name: Disable SELinux
+  ansible.posix.selinux:
+    policy: targeted
+    state: permissive
+  become: true
+

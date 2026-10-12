@@ -6,8 +6,24 @@
     shell: /bin/bash
     create_home: yes
     groups: wheel
+    append: yes
     state: present
     password: "{{liam_password | string | password_hash('sha512')}}"
-  become: yes
 
+# make .ssh file
+- name: make .ssh directory
+  ansible.builtin.file:
+    path: /home/liam/.ssh
+    state: directory
+    owner: liam
+    group: liam
+    mode: "0700" 
+    
 #import SSH keys in ~/.ssh/authorized_keys
+- name: import ssh keys
+  ansible.builtin.copy:
+    src: authorized_keys
+    dest: /home/liam/.ssh/authorized_keys
+    owner: liam
+    group: liam
+    mode: "0600"
