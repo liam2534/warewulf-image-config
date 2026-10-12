@@ -7,9 +7,10 @@
     update_cache: yes
     become: true
 
-- name: Disable SELinux
-  ansible.posix.selinux:
-    policy: targeted
-    state: permissive
-  become: true
+
+# - name: Disable SELinux
+#   ansible.posix.selinux:
+#     policy: targeted
+#     state: permissive
+#   become: true
 
